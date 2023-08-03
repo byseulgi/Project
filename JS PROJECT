@@ -1,0 +1,38 @@
+
+let nfts = [];
+
+
+function mintNFT(name, description, rarity) {
+  const nft = {
+    name: name,
+    description: description,
+    rarity: rarity
+  };
+  nfts.push(nft);
+}
+
+
+function listNFTs() {
+  for (const nft of nfts) {
+    console.log("Name:", nft.name);
+    console.log("Description:", nft.description);
+    console.log("Rarity:", nft.rarity);
+    console.log("-----");
+  }
+}
+
+
+function getTotalSupply() {
+  return nfts.length;
+}
+
+
+
+mintNFT("NFT 1", "Description for NFT 1", "Common");
+mintNFT("NFT 2", "Description for NFT 2", "Rare");
+mintNFT("NFT 3", "Description for NFT 3", "Legendary");
+
+listNFTs();
+
+const totalSupply = getTotalSupply();
+console.log("Total NFTs Minted:", totalSupply);
